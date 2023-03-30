@@ -11,10 +11,11 @@ total_profit = 0
 greatest_increase = 0
 greatest_decrease = 0
 prev_profit = 0
+profit_change = 0
 profit_change_list = []
 
 # Open and read the "budget_data" CSV file
-with open(census_csv, newline="") as csvfile:
+with open(budget_csv, newline="") as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
 
     # skip header row
@@ -33,16 +34,20 @@ with open(census_csv, newline="") as csvfile:
         profit_change += int(row[1]) - prev_profit
         prev_profit = int(row[1])
 
-        # add the profit change to a list
-        profit_change_list.append(profit_change)
-
         # check if the profit change is the greatest or decrease
         if profit_change > greatest_increase:
             greatest_increase = profit_change
             greatest_increase_month = row [0]       
         elif profit_change < greatest_decrease:
             greatest_decrease = profit_change
-            greatest_decrease_month = row[0]                        
+            greatest_decrease_month = row[0]  
+
+        # add the profit change to a list
+        profit_change_list.append(profit_change)
+
+        # reset profit_change for next loop
+        profit_change = 0
+                      
 
 
 # calculate the average profit change
