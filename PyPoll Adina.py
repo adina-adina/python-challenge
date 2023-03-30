@@ -30,3 +30,9 @@ with open(poll_csv, 'r') as csvfile:
         else:
             candidates[row[2]] += 1
 
+# loop through each candidate in the dictionary
+for candidate in candidates:
+    # calculate the percentage of votes they received
+    vote_percentage = round((candidates[candidate] / total_votes) * 100, 3)
+    # Print their name, percentage of votes, and total number of votes
+    print(f"{candidate}: {vote_percentage}% ({candidates[candidate]})")
