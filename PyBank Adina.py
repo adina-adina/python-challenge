@@ -29,7 +29,17 @@ with open(census_csv, newline="") as csvfile:
         # calculate the total profit
         total_profit += int(row[1])
 
-        # calculate the total profit
+        # calculate the change in profit compared to the previous month
         profit_change += int(row[1]) - prev_profit
         prev_profit = int(row[1])
-                        
+
+        # add the profit change to a list
+        profit_change_list.append(profit_change)
+
+        # check if the profit change is the greatest or decrease
+        if profit_change > greatest_increase
+            greatest_increase = profit_change
+            greatest_increase_month = row [0]       
+        elif profit_change < greatest_decrease:
+            greatest_decrease = profit_change
+            greatest_decrease_month = row[0]                        
