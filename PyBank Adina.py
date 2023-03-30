@@ -1,6 +1,7 @@
 # modules
 import os
 import csv
+import datetime
 
 # define file path
 budget_csv = os.path.join("budget_data.csv")
@@ -13,6 +14,7 @@ greatest_decrease = 0
 prev_profit = 0
 profit_change = 0
 profit_change_list = []
+
 
 # Open and read the "budget_data" CSV file
 with open(budget_csv, newline="") as csvfile:
@@ -37,11 +39,10 @@ with open(budget_csv, newline="") as csvfile:
         # check if the profit change is the greatest or decrease
         if profit_change > greatest_increase:
             greatest_increase = profit_change
-            greatest_increase_month = row [0]       
+            greatest_increase_month = datetime.datetime.strptime(row[0], ('%y-%b')).strftime('%b-%y')      
         elif profit_change < greatest_decrease:
             greatest_decrease = profit_change
-            greatest_decrease_month = row[0]  
-
+            greatest_decrease_month = datetime.datetime.strptime(row[0], ('%y-%b')).strftime('%b-%y')
         # add the profit change to a list
         profit_change_list.append(profit_change)
 
@@ -49,18 +50,25 @@ with open(budget_csv, newline="") as csvfile:
         profit_change = 0
                       
 
-
 # calculate the average profit change
 average_profit_change = sum(profit_change_list[1:]) / len(profit_change_list[1:])
 
 # print the analysis to the console
+print("")
 print("Financial Analysis")
+print("")
 print("----------------------------")
+print("")
 print(f"Total Months: {total_months}")
 print(f"Total: ${total_profit}")
 print(f"Average Change: ${round(average_profit_change, 2)}")
 print(f"Greatest Increase in Profits: {greatest_increase_month} (${greatest_increase})")
 print(f"Greatest Decrease in Profits: {greatest_decrease_month} (${greatest_decrease})")
+print("")
+
+# format in console output
+print("----------------------------")
+print("")
 
 # define the file path for the analysis text file
 output_file = os.path.join("budget_analysis_results.txt")
