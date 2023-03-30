@@ -37,7 +37,7 @@ with open(census_csv, newline="") as csvfile:
         profit_change_list.append(profit_change)
 
         # check if the profit change is the greatest or decrease
-        if profit_change > greatest_increase
+        if profit_change > greatest_increase:
             greatest_increase = profit_change
             greatest_increase_month = row [0]       
         elif profit_change < greatest_decrease:
