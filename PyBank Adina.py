@@ -43,3 +43,16 @@ with open(census_csv, newline="") as csvfile:
         elif profit_change < greatest_decrease:
             greatest_decrease = profit_change
             greatest_decrease_month = row[0]                        
+
+
+# calculate the average profit change
+average_profit_change = sum(profit_change_list[1:]) / len(profit_change_list[1:])
+
+# print the analysis to the console
+print("Financial Analysis")
+print("----------------------------")
+print(f"Total Months: {total_months}")
+print(f"Total: ${total_profit}")
+print(f"Average Change: ${round(average_profit_change, 2)}")
+print(f"Greatest Increase in Profits: {greatest_increase_month} (${greatest_increase})")
+print(f"Greatest Decrease in Profits: {greatest_decrease_month} (${greatest_decrease})")
