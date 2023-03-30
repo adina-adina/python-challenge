@@ -13,3 +13,6 @@ greatest_decrease = 0
 prev_profit = 0
 profit_change_list = []
 
+# Open and read the "budget_data" CSV file
+with open(census_csv, newline="") as csvfile:
+    csvreader = csv.reader(csvfile, delimiter=",")
