@@ -61,3 +61,21 @@ print(f"Total: ${total_profit}")
 print(f"Average Change: ${round(average_profit_change, 2)}")
 print(f"Greatest Increase in Profits: {greatest_increase_month} (${greatest_increase})")
 print(f"Greatest Decrease in Profits: {greatest_decrease_month} (${greatest_decrease})")
+
+# define the file path for the analysis text file
+output_file = os.path.join("budget_analysis_results.txt")
+
+# open the text analysis file in write mode
+with open(output_file, "w") as file:
+
+    # write the analysis to the output text file
+    file.write("Financial Analysis\n")
+    file.write("----------------------------\n")
+    file.write(f"Total Months: {total_months}\n")
+    file.write(f"Total: ${total_profit}\n")
+    file.write(f"Average Change: ${round(average_profit_change, 2)}\n")
+    file.write(f"Greatest Increase in Profits: {greatest_increase_month} (${greatest_increase})\n")
+    file.write(f"Greatest Decrease in Profits: {greatest_decrease_month} (${greatest_decrease})\n")
+
+# confirm the file export in the console
+print(f"The analysis has been exported to {output_file}.")
