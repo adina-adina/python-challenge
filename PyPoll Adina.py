@@ -10,9 +10,15 @@ candidates = {}
 winner = ""
 max_votes = 0
 
-# Open and read "election_data.csv"
+# open and read "election_data.csv"
 with open(poll_csv, 'r') as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
 
-    # Skip header row
+    # skip header row
     next(csvreader)
+
+    # loop through each row and analyze data
+     for row in csvreader:
+
+        # count total votes
+        total_votes += 1
