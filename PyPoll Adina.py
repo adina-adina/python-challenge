@@ -22,3 +22,11 @@ with open(poll_csv, 'r') as csvfile:
 
         # count total votes
         total_votes += 1
+
+        # If the candidate is not in the dictionary, add them with one vote
+        if row[2] not in candidates:
+            candidates[row[2]] = 1
+        # If the candidate is already in the dictionary, add one to their vote count
+        else:
+            candidates[row[2]] += 1
+
