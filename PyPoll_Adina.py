@@ -55,3 +55,9 @@ for candidate in candidates:
 print("-------------------------")
 print(f"Winner: {winner}")
 print("-------------------------")
+
+# define the file path for the results text file
+output_file = os.path.join("election_results.txt")
+
+# open the text analysis file in write mode
+with open(output_file, "w") as file:
