@@ -30,9 +30,27 @@ with open(poll_csv, 'r') as csvfile:
         else:
             candidates[row[2]] += 1
 
+# print Total Votes
+print("Election Results")
+print("-------------------------")
+print(f"Total Votes: {total_votes}")
+print("-------------------------")
+
 # loop through each candidate in the dictionary
 for candidate in candidates:
-    # calculate the percentage of votes they received
+
+    # calculate vote percentage for each candidate
     vote_percentage = round((candidates[candidate] / total_votes) * 100, 3)
-    # Print their name, percentage of votes, and total number of votes
+
+    # print candidate's name, vote percentage, and total number of votes
     print(f"{candidate}: {vote_percentage}% ({candidates[candidate]})")
+
+    # find the winner
+    if candidates[candidate] > max_votes:
+        max_votes = candidates[candidate]
+        winner = candidate
+
+# print winner
+print("-------------------------")
+print(f"Winner: {winner}")
+print("-------------------------")
