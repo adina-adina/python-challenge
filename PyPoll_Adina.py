@@ -69,18 +69,18 @@ with open(output_file, "w") as file:
     file.write(f"Total Votes: {total_votes}\n")
     file.write("----------------------------\n")
         
-        # loop through each candidate in the dictionary
-        for candidate in candidates:
+    # loop through each candidate in the dictionary
+    for candidate in candidates:
         
-            # calculate vote percentage for each candidate
-            vote_percentage = round((candidates[candidate] / total_votes) * 100, 3)
+    # calculate vote percentage for each candidate
+        vote_percentage = round((candidates[candidate] / total_votes) * 100, 3)
 
-            # write candidate's name, vote percentage, and total number of votes to file
-            file.write(f"{candidate}: {vote_percentage}% ({candidates[candidate]})\n")
+     # write candidate's name, vote percentage, and total number of votes to file
+        file.write(f"{candidate}: {vote_percentage}% ({candidates[candidate]})\n")
 
-    file.write("-------------------------\n")
+    file.write("----------------------------\n")
     file.write(f"Winner: {winner}\n")
-    file.write("--------------------------\n")
+    file.write("----------------------------python\n")
 
 # confirm the file export in the console
 print(f"The analysis has been exported to {output_file}.")
