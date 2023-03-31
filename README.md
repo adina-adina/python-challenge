@@ -1,1 +1,5 @@
-# python-challenge
+"PyBank_Adina" and "PyPoll_Adina" should be the correct Python files I am submitting.  I changed the file names so they would be a little easier to run
+in the console.  However, I don't want to delete the older files because I've been told it's important to show you the history of my pushes on
+Github.
+
+I relied on ChatGPT and class examples to get me through this assignment.  It's code wasn't perfect, so there were lots of small edits I still had to make.  And the commentary is completely original.  Although ChatGPT gave me starter code, I spent a lot of time poring through the code to make sure I understood all the logic and syntax.  I actually discovered two separate methods for the election data.  One used lists and the append function, and the other used dictionaries.  The dictionary method felt simpler and more intuitive to me so that's what I went with.  It was also a good opportunity to learn about using dictionaries in Python.

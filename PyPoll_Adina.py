@@ -75,7 +75,7 @@ with open(output_file, "w") as file:
     # calculate vote percentage for each candidate
         vote_percentage = round((candidates[candidate] / total_votes) * 100, 3)
 
-     # write candidate's name, vote percentage, and total number of votes to file
+    # write candidate's name, vote percentage, and total number of votes to file
         file.write(f"{candidate}: {vote_percentage}% ({candidates[candidate]})\n")
 
     file.write("----------------------------\n")
